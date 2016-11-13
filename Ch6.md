@@ -1,0 +1,68 @@
+Ch6 Homework
+============
+
+EXERCISE
+--------
+
+### 9.
+```{.numberLines .asm}
+--Process it
+LOAD K
+ADD THREE
+LOAD L
+ADD ONE
+SUBTRACT M
+SUBTRACT N
+STORE K
+COMPARE TEN
+JUMPLT NOOUTPUTK
+JUMPEQ NOOUTPUTK
+OUT K
+
+NOOUTPUTK:
+COMPARE L
+
+JUMPLT LGTQ
+JUMPEQ LGTQ
+OUT K
+ADD ONE
+STORE K
+JUMP SKIPL
+
+LGTQ:
+OUT L
+LOAD L
+ADD ONE
+STORE L
+
+SKIPL:
+CLEAR K
+LOAD K
+ADD ONE
+STORE K
+
+LOOP:
+LOAD K
+COMPARE HUNDRED
+JUMPGT END
+OUT K
+ADD ONE
+STORE K
+JUMP LOOP
+
+END:
+HALT
+
+--Data segment
+K:          .DATA       0
+L:          .DATA       0
+M:          .DATA       0
+N:          .DATA       0
+ONE:        .DATA       1
+THREE:      .DATA       3
+TEN:        .DATA      10
+HUNDRED:    .DATA     100
+
+```
+
+### 15.
